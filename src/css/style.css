@@ -1,0 +1,171 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282c33;
+}
+
+.react {
+    width: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+}
+
+.react-orbit {
+    position: absolute;
+    border: 0.45rem #55DBF8 solid;
+    height: 4rem;
+    width: 11rem;
+    border-radius: 250%;
+    box-shadow: 0 0 5px cyan;
+    animation: glow 3s ease-in-out infinite;
+}
+
+.react-orbit .react-orbit-line {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: react-orbit-line 5s linear infinite;
+}
+
+.react-orbit .react-orbit-line::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1;
+    margin: 37px;
+    left: -30px;
+}
+
+@keyframes react-orbit-line {
+    0% {
+        transform: rotate(360deg);
+    }
+}
+
+.orbit-1 {
+    transform: rotate(60deg);
+    position: relative;
+}
+
+.orbit-1 .orbit-line-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: atom 5s linear infinite;
+}
+
+.orbit-1 .orbit-line-1::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1;
+    margin: 37px;
+    top: 43px;
+}
+
+
+@keyframes atom {
+    0% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0;
+    }
+
+    75% {
+        box-shadow: 0 0 25px cyan,
+            0 0 50px cyan;
+    }
+}
+
+.orbit-2 {
+    transform: rotate(-60deg);
+}
+
+.orbit-2 .orbit-line-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: orbit-line-2 5s linear infinite;
+}
+
+.orbit-2 .orbit-line-2::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1;
+    margin: 37px;
+    top: 45px;
+}
+
+
+@keyframes orbit-line-2 {
+    0% {
+        transform: rotate(360deg);
+    }
+}
+
+.orbit-center {
+    height: 2.2rem;
+    width: 2.2rem;
+    background-color: #55DBF8;
+    border-radius: 50%;
+    position: absolute;
+    animation: center-orbit 3s linear infinite;
+
+}
+
+.orbit-center .orbit-center-line::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.orbit-center .orbit-center-line::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+@keyframes center-orbit {
+    0% {
+        transform: rotate(360deg);
+    }
+}
